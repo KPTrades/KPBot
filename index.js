@@ -49,6 +49,14 @@ const persona = {
   - **ALWAYS** conclude every response with the following disclaimer: "This is not financial advice. All analysis is for informational purposes only. Consult with a qualified financial advisor before making any investment decisions."`
 };
 
+// --- ADD THIS DEBUGGING BLOCK ---
+console.log("--- CHECKING ENVIRONMENT VARIABLES ---");
+console.log(`Bot Token found: ${!!process.env.BOT_TOKEN}`);
+console.log(`Gemini Key found: ${!!process.env.GEMINI_API_KEY}`);
+console.log(`Channel ID found: ${!!process.env.ALLOWED_CHANNEL_ID}`);
+console.log("------------------------------------");
+// --- END OF DEBUGGING BLOCK ---
+
 // --- HELPER FUNCTION FOR IMAGE PROCESSING ---
 async function urlToGenerativePart(url, mimeType) {
   const response = await axios.get(url, { responseType: 'arraybuffer' });
